@@ -7,3 +7,6 @@ The data is also displayed on a 12864 screen and the user is able to change the 
 The user can also load a file with resistance values and times when to set them on an SD card.<br/>
 <br/>
 I will publish a full instructable later
+
+If you want to dig deaper into the code I highly suggest reading the "Fitness Machine Service" specifications
+<a href="https://www.bluetooth.com/specifications/gatt/">https://www.bluetooth.com/specifications/gatt/</a>
