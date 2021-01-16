@@ -229,7 +229,7 @@ void loop() {
 		Serial.println(pedalTorque);
 		level = mapF(pedalTorque, lowTorque, highTorque, lowCal[1], highCal[1]);	// mapped to the level settings
 		//uncomment this line to use the configurator
-		//level = c1*gears[gearIndex]*grade+c2*gears[gearIndex]+c3
+		//level = 2*(c1*gears[gearIndex]*grade+c2*gears[gearIndex]+c3)
 		Serial.println(level);
 		level = constrain(level, 0, levelSteps);
 		
