@@ -25,6 +25,12 @@ const int levelSteps = 40;		// resistance steps
 
 #define interruptTime 70		// miliseconds for debouncing buttons
 
+//uncomment these lines to use the configurator
+/*
+#define c1 0.749
+#define c2 1.734
+#define c3 -0.108
+*/
 const int lowCal[3] =	{ 60, 10, 110 }; // cadence[rpm], level, power[W]
 const int highCal[3] =	{ 60, 20, 210 }; // cadence[rpm], level, power[W]
 
@@ -222,6 +228,8 @@ void loop() {
 		Serial.println(gears[gearIndex]);
 		Serial.println(pedalTorque);
 		level = mapF(pedalTorque, lowTorque, highTorque, lowCal[1], highCal[1]);	// mapped to the level settings
+		//uncomment this line to use the configurator
+		//level = c1*gears[gearIndex]*grade+c2*gears[gearIndex]+c3
 		Serial.println(level);
 		level = constrain(level, 0, levelSteps);
 		
