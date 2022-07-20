@@ -226,7 +226,7 @@ void InitBLEServer() {
 	fitnessMachineStatusCharacteristic.addDescriptor(new BLE2902());
 
 	fitnessMachineControlPointCharacteristic.setCallbacks(new MyCallback()); // set callback for write
-
+	advertisementData.setFlags(ESP_BLE_ADV_FLAG_BREDR_NOT_SPT+ESP_BLE_ADV_FLAG_GEN_DISC); // set BLE EDR not supported and general discoverable flags, necessary for RGT
 	pServer->getAdvertising()->addServiceUUID(fitnessMachineService);
 	pServer->getAdvertising()->setAdvertisementData(advertisementData);
 	pFitness->start();
